@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h> 
-#include "AVL_Structure/AVL_Item.h"
-#include "AVL_Structure/AVL_Tree.h"
+#include "AVL_Item.h"
+#include "AVL_Tree.h"
 #include "memory_management.h"
 
 AVL_Tree Memory_Tree;

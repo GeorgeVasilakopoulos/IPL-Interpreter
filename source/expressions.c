@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include<stdio.h>
 #include "line_reader.h"
-#include "Memory_Management/memory_management.h"
+#include "memory_management.h"
 #include "expressions.h"
 #include "error_handling.h"
 
@@ -102,7 +102,10 @@ static int getValueFromTerm(int* value_output, char** start_of_term_ptr, char** 
 		char name[MAX_SIZE];
 		*end_of_term_ptr = end_of_term = getVariableFromString(name,&index,start_of_term);
 		if(error_occurred())return 1;
-		Get_Value(name,index,value_output);
+		if(Get_Value(name,index,value_output)){
+			declare_error(7,NULL);
+			return 1;
+		}
 	}
 	
 }

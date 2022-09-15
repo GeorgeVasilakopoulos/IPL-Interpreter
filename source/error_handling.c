@@ -42,6 +42,9 @@ void declare_error(int error_type, void* ptr){
 			case 6:
 				printf("Error at Line %d: Incorrectly parenthesized expression\n",block->line_number);
 				break;
+			case 7:
+				printf("Error at Line %d: Array index out of bounds\n",block->line_number);
+				break;
 			case 8:
 				//Unknown character
 				printf("Error at Line %d: Unknown character\n",block->line_number);

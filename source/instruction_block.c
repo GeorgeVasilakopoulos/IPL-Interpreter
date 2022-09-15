@@ -5,7 +5,7 @@
 
 
 #include "line_reader.h"
-#include "Memory_Management/memory_management.h"
+#include "memory_management.h"
 #include "expressions.h"
 
 struct instruction_block{
@@ -157,7 +157,6 @@ static int run_recursive(struct instruction_block* block){
 				run_recursive(block->next);
 				if(break_counter > 0) return 1;
 				block = block->branch;
-				//printf("herewe %p\n",block);
 				while(block != NULL && is__Block("else",block))block=block->branch;
 			}
 			else{
